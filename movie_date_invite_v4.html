@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Date with Bhavin?</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffd1dc, #ff9a9e);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      background: white;
+      padding: 32px;
+      border-radius: 22px;
+      text-align: center;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+      max-width: 360px;
+      position: relative;
+    }
+    h1 { color: #ff4f7b; }
+    p { color: #444; font-size: 17px; line-height: 1.5; }
+
+    .buttons button {
+      margin: 12px 8px;
+      padding: 12px 22px;
+      border: none;
+      border-radius: 30px;
+      font-size: 15px;
+      cursor: pointer;
+      color: white;
+    }
+    .yes { background: #ff6f91; }
+    .def-yes { background: #ff3d68; }
+
+    /* Overlay */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(255,79,123,0.95);
+      border-radius: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      cursor: pointer;
+    }
+    .overlay h2 {
+      margin-bottom: 10px;
+    }
+    .overlay small {
+      opacity: 0.9;
+    }
+
+    iframe { display:none; }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="overlay" onclick="startMusic()">
+    <h2>🎶 Tap to start</h2>
+    <small>(music + surprise 💖)</small>
+  </div>
+
+  <h1>🎬 Hey Aska 💖</h1>
+  <p>
+    I was thinking…<br>
+    What if we watch a movie together online? 🍿<br>
+    Just you, me, and a cozy vibe ✨
+  </p>
+
+  <iframe id="song" width="100%" height="120"
+    src="https://www.youtube.com/embed/mt9xg0mmt28?autoplay=1&rel=0"
+    title="Tum Se Hi - Mohit Chauhan"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+
+  <div class="buttons">
+    <button class="yes" onclick="alert('Yay! 💕 You said YES. Text me 😊')">Yes 💗</button>
+    <button class="def-yes" onclick="alert('OMG 😍 Definitely YES! I am excited!')">Definitely YES 😍</button>
+  </div>
+</div>
+
+<script>
+function startMusic(){
+  document.querySelector('.overlay').style.display = 'none';
+  const iframe = document.getElementById('song');
+  iframe.style.display = 'block';
+}
+</script>
+
+</body>
+</html>
